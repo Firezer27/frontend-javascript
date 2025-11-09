@@ -1,17 +1,14 @@
-
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workDirectorTasks(): string;
 }
 
-
 interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workTeacherTasks(): string;
 }
-
 
 class Director implements DirectorInterface {
   workFromHome(): string {
@@ -27,7 +24,6 @@ class Director implements DirectorInterface {
   }
 }
 
-
 class Teacher implements TeacherInterface {
   workFromHome(): string {
     return "Cannot work from home";
@@ -42,7 +38,6 @@ class Teacher implements TeacherInterface {
   }
 }
 
-
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
@@ -56,7 +51,6 @@ export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
-
 export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
@@ -67,7 +61,6 @@ export function executeWork(employee: Director | Teacher): string {
 
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
-
 
 //  Task 7 — String literal types
 
