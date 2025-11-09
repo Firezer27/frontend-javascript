@@ -52,12 +52,12 @@ function createEmployee(salary: number | string): Director | Teacher {
 
 //  Task 6 - Creating functions specific to employees
 
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
 
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
