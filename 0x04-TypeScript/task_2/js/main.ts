@@ -71,7 +71,7 @@ console.log(executeWork(createEmployee(1000)));
 
 //  Task 7 — String literal types
 
-export type Subjects = "Math" | "History";
+type Subjects = "Math" | "History";
 
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
@@ -82,4 +82,4 @@ export function teachClass(todayClass: Subjects): string {
 }
 
 console.log(teachClass("Math"));
-console.log(teachClass("History")); 
+console.log(teachClass("History"));
