@@ -7,17 +7,18 @@ interface Teacher {
   [key: string]: any;
 }
 
-interface Directors extends Teacher {
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  ({ firstName, lastName }: { firstName: string; lastName: string }): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName} ${lastName}`;
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
+  return `${firstName}. ${lastName}`;
 };
+
 
 interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClassInterface;
