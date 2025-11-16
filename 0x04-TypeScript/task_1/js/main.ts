@@ -1,3 +1,4 @@
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -45,7 +46,3 @@ class StudentClass implements StudentClassInterface {
     return this.firstName;
   }
 }
-
-const student = new StudentClass("Alice", "Johnson");
-console.log(student.displayName());
-console.log(student.workOnHomework());
